@@ -1,0 +1,14 @@
+{
+    "keywords": "",
+    "scripts": {
+        "dev": "fis3 release -w -d ./output -r ./ -f compile/fis-conf.js -c",
+        "s": "node compile/server"
+    },
+    "dependencies": {
+        "express": "^4.16.2",
+        "is-absolute-url": "^2.1.0"
+    },
+    "devDependencies": {
+        "ejs": "^2.5.7"
+    }
+}
