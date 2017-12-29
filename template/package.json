@@ -2,13 +2,35 @@
     "keywords": "",
     "scripts": {
         "dev": "fis3 release -w -d ./output -r ./ -f compile/fis-conf.js -c",
-        "s": "node compile/server"
+        "s": "node ./compile/server"
     },
     "dependencies": {
+        "babel": "^6.23.0",
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-plugin-syntax-flow": "^6.18.0",
+        "babel-plugin-syntax-jsx": "^6.18.0",
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "babel-plugin-transform-decorators-legacy": "^1.3.4",
+        "babel-plugin-transform-flow-strip-types": "^6.22.0",
+        "babel-plugin-transform-react-display-name": "^6.25.0",
+        "babel-plugin-transform-react-jsx": "^6.24.1",
+        "babel-plugin-transform-react-jsx-source": "^6.22.0",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-es2015": "^6.24.1",
         "express": "^4.16.2",
-        "is-absolute-url": "^2.1.0"
+        "glob": "^7.1.2",
+        "is-absolute-url": "^2.1.0",
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0",
+        "vue": "^2.5.13"
     },
     "devDependencies": {
-        "ejs": "^2.5.7"
+        "ejs": "^2.5.7",
+        "react-hot-loader": "^4.0.0-beta.6",
+        "vue-loader": "^13.6.1",
+        "webpack": "^3.10.0",
+        "webpack-dev-middleware": "^2.0.3",
+        "webpack-hot-middleware": "^2.21.0"
     }
 }

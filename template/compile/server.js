@@ -1,8 +1,13 @@
-var path = require('path')
+var webpack = require('webpack')
+var compiler = webpack(require('./webpack.config.js'))
 var express = require('express')
-var app = express()
+var path = require('path')
+var app = express();
+
 app.use(express.static(path.join(__dirname, '../output')))
-var port = 2000
-app.listen(port, function () {
-    console.log('http://127.0.0.1:' + port)
-})
+app.use(require("webpack-dev-middleware")(compiler, {
+	publicPath: '/',
+}));
+app.use(require("webpack-hot-middleware")(compiler))
+
+app.listen(3000)

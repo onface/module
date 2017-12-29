@@ -2,9 +2,18 @@ var iPackage = require('../package.json')
 var markrun = require('markrun')
 var path = require('path')
 var fs = require('fs')
-fis.match('doc/theme/**.html', {
-    release: false
-})
+var htmlEntryScriptParser = function (content, file) {
+    var matchScript = /\<script(.*)?src="(.*demo\.(vue\.)?js)"\s*\>/g
+    return content.replace(matchScript, function (source, attr, src) {
+        var url = path.join(file.dirname, src).replace(fis.project.getProjectPath(), '')
+        var html = `
+        <script>
+          document.write('<scr'+ 'ipt ${attr} src="${url}"></scr' + 'ipt>')
+        `
+        return html
+    })
+}
+
 fis.match('**.md', {
     parser: [
         function (content, file) {
@@ -31,7 +40,8 @@ fis.match('**.md', {
                return 'href="' + url + '"'
             })
             return html
-        }
+        },
+        htmlEntryScriptParser
     ],
     useDomain: true,
     isHtmlLike: true,
@@ -40,3 +50,13 @@ fis.match('**.md', {
 fis.match('(**)README.md', {
     release: '$1index'
 })
+fis.match('**.js', {
+    release: false
+})
+fis.match('doc/theme/**', {
+    release: true
+}, true)
+
+fis.match('doc/theme/template/default.html', {
+    release: false
+}, true)
