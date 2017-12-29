@@ -5,6 +5,13 @@
 
 <script src="./basic.demo.js"></script>
 
+````css
+.basicDemo .face-btn {
+    margin-bottom: .2em;
+    margin-right: .2em;
+}
+````
+
 ## style
 
 ···  
