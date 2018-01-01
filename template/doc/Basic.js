@@ -20,4 +20,5 @@ class Basic extends React.Component {
         )
     }
 }
-module.exports = require("react-hot-loader").hot(module)(Basic)
+/*ONFACE-DEL*/Basic = require("react-hot-loader").hot(module)(Basic)
+module.exports = Basic
