@@ -20,17 +20,6 @@
 }
 </style>
 
-````code
-{
-    title: 'vue',
-    desc: '',
-    html: '<div id="app" ></div>',
-    js: './vue.demo.js',
-    source: '../lib/vue.vue',
-    open: true
-}
-````
-
 ## style
 
 ···  
