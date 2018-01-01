@@ -48,6 +48,7 @@ class Button extends Component {
         delete cloneProps.disabled
         return (
             <span
+                ref="root"
                 {...cloneProps}
                 onClick={self.proxyClick}
                 className={rootClassName}

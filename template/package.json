@@ -4,7 +4,8 @@
     "keywords": "",
     "scripts": {
         "dev": "fis3 release -w -d ./output -r ./ -f compile/fis-conf.js -c",
-        "s": "node ./compile/server"
+        "s": "node ./compile/server",
+        "test": "./node_modules/karma/bin/karma start ./compile/karma.conf.js --browsers Chrome"
     },
     "dependencies": {
         "babel": "^6.23.0",
@@ -20,11 +21,14 @@
         "babel-plugin-transform-react-jsx-source": "^6.22.0",
         "babel-polyfill": "^6.26.0",
         "babel-preset-es2015": "^6.24.1",
+        "chai": "^4.1.2",
         "express": "^4.16.2",
         "extend": "^3.0.1",
         "fis-parser-less-2.x": "^0.1.4",
         "glob": "^7.1.2",
+        "hash-to-port": "^1.0.0",
         "is-absolute-url": "^2.1.0",
+        "jasmine-core": "^2.8.0",
         "less-plugin-autoprefix": "^1.5.1",
         "less-plugin-functions": "^1.0.0",
         "prop-types": "^15.6.0",
@@ -37,7 +41,16 @@
     "devDependencies": {
         "css-loader": "^0.26.1",
         "ejs": "^2.5.7",
+        "enzyme": "^3.3.0",
+        "enzyme-adapter-react-16": "^1.1.1",
         "json5": "^0.5.1",
+        "karma": "^2.0.0",
+        "karma-babel-preprocessor": "^7.0.0",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-jasmine": "^1.1.1",
+        "karma-sauce-launcher": "^1.2.0",
+        "karma-sourcemap-loader": "^0.3.7",
+        "karma-webpack": "^2.0.9",
         "less": "^2.7.3",
         "less-loader": "^2.2.3",
         "react-hot-loader": "^4.0.0-beta.6",
