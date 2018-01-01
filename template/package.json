@@ -22,17 +22,20 @@
         "babel-preset-es2015": "^6.24.1",
         "express": "^4.16.2",
         "extend": "^3.0.1",
+        "fis-parser-less": "^0.1.3",
         "glob": "^7.1.2",
         "is-absolute-url": "^2.1.0",
         "prop-types": "^15.6.0",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
         "util.react": "^1.4.1",
-        "vue": "^2.5.13"
+        "vue": "^2.5.13",
+        "vue-template-compiler": "^2.5.13"
     },
     "devDependencies": {
         "css-loader": "^0.26.1",
         "ejs": "^2.5.7",
+        "json5": "^0.5.1",
         "less": "^2.7.3",
         "less-loader": "^2.2.3",
         "react-hot-loader": "^4.0.0-beta.6",

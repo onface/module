@@ -53,8 +53,15 @@ module.exports = {
                 ]
             },
             {
+				test: /\.vue$/,
+				exclude: /node_modules/,
+				use: [
+					'vue-loader'
+				]
+			},
+            {
                 test: /\.js$/,
-	            exclude: /(node_modules|\.vue.js$)/,
+	            exclude: /node_modules/,
                 use: [
                     {
                         loader: 'babel-loader',
@@ -66,8 +73,11 @@ module.exports = {
     },
     resolve: {
         alias: (function () {
-            var alias = {}
+            var alias = {
+                'vue': 'vue/dist/vue.js'
+            }
             alias[iPackage.name] = path.join(__dirname, '../', iPackage.main || 'index.js')
+
             return alias
         })()
     }

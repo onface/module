@@ -1,4 +1,12 @@
 module.exports = {
+    less: {
+        plugins: [
+            new LessPluginFunctions(),
+            new LessPluginAutoPrefix({
+                browsers: ["not ie < 9"]
+            })
+        ]
+    },
     babel: {
         presets: [
             "es2015"
