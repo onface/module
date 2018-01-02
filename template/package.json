@@ -4,7 +4,8 @@
     "keywords": "",
     "scripts": {
         "dev": "fis3 release -w -d ./output -r ./ -f compile/fis-conf.js -c",
-        "s": "node ./compile/server"
+        "s": "node ./compile/server",
+        "build": "rm -rf ./output && fis3 release build -d ./output -r ./ -f compile/fis-conf.js -c"
     },
     "dependencies": {
         "babel": "^6.23.0",

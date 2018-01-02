@@ -11,6 +11,9 @@ fis.match('**.css', {
 
 
 var htmlEntryScriptParser = function (content, file) {
+    if (fis.project.currentMedia() !== 'dev') {
+        return content
+    }
     var matchScript = /\<script(.*)?src="(.*demo\.js)"\s*\>/g
     return content.replace(matchScript, function (source, attr, src) {
         var url = path.join(file.dirname, src).replace(fis.project.getProjectPath(), '')
@@ -23,6 +26,9 @@ var htmlEntryScriptParser = function (content, file) {
 }
 
 fis.match('**.md', {
+    useDomain: true,
+    isHtmlLike: true,
+    rExt: '.html',
     parser: [
         function (content, file) {
             var type = 'default'
@@ -73,7 +79,7 @@ fis.match('**.md', {
                 },
                 template: function (data) {
                     var typePath = data.type || type
-                    var templatePath = path.join(__dirname, '../doc/theme/template/' + typePath + '.html')
+                    var templatePath = path.join(__dirname, '../doc/theme/template/' + typePath + '.ejs')
                     var templateContent = fs.readFileSync(templatePath).toString()
                     return templateContent
                 }
@@ -90,21 +96,14 @@ fis.match('**.md', {
             return html
         },
         htmlEntryScriptParser
-    ],
-    useDomain: true,
-    isHtmlLike: true,
-    rExt: '.html'
+    ]
 })
 fis.match('(**)README.md', {
     release: '$1index'
 })
-fis.match('**.js', {
+fis.media('dev').match('**.js', {
     release: false
 })
 fis.match('doc/theme/**', {
     release: true
-}, true)
-
-fis.match('doc/theme/template/default.html', {
-    release: false
-}, true)
+})

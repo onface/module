@@ -1,11 +1,7 @@
+
 module.exports = {
     less: {
-        plugins: [
-            new LessPluginFunctions(),
-            new LessPluginAutoPrefix({
-                browsers: ["not ie < 9"]
-            })
-        ]
+        plugins: []
     },
     babel: {
         presets: [
