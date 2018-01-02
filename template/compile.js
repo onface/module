@@ -1,13 +1,6 @@
-var LessPluginFunctions = require('less-plugin-functions')
-var LessPluginAutoPrefix = require('less-plugin-autoprefix')
 module.exports = {
     less: {
-        plugins: [
-            new LessPluginFunctions(),
-            new LessPluginAutoPrefix({
-                browsers: ["not ie < 9"]
-            })
-        ]
+        plugins: []
     },
     babel: {
         presets: [

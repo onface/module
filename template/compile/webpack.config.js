@@ -3,12 +3,10 @@ var webpack = require('webpack')
 var path = require('path')
 var compileConfig = require('../compile')
 var entryMap = {}
-var entryFiles = glob.sync('**/**demo{.js,.vue.js}')
+var entryFiles = glob.sync('**/**demo.js')
 var iPackage = require('../package.json')
 entryFiles.forEach(function (filePath) {
-    if (/^output/.test(filePath)) {
-        return
-    }
+    if (/^(output|node_modules)/.test(filePath)) { return }
     var name = filePath
     entryMap[name]  = [
         './' + filePath,

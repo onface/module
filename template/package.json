@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "fis3 release -w -d ./output -r ./ -f compile/fis-conf.js -c",
         "s": "node ./compile/server",
-        "test": "./node_modules/karma/bin/karma start ./compile/karma.conf.js --browsers Chrome"
+        "build": "rm -rf ./output && fis3 release build -d ./output -r ./ -f compile/fis-conf.js -c"
     },
     "dependencies": {
         "babel": "^6.23.0",
