@@ -9,5 +9,5 @@ app.use(require("webpack-dev-middleware")(compiler, {
 	publicPath: '/',
 }));
 app.use(require("webpack-hot-middleware")(compiler))
-
-app.listen(3000)
+var config = require('./getConfig')()
+app.listen(config.serverPort)

@@ -4,7 +4,7 @@
     "keywords": "",
     "scripts": {
         "dev": "rm -rf output && fis3 release -w -d ./output -r ./ -f compile/fis-conf.js -c",
-        "s": "node ./compile/server",
+        "s": "node ./compile/open && node ./compile/server",
         "build": "rm -rf ./output && fis3 release build -d ./output -r ./ -f compile/fis-conf.js -c"
     },
     "dependencies": {
@@ -32,6 +32,7 @@
         "less-plugin-autoprefix": "^1.5.1",
         "less-plugin-functions": "^1.0.0",
         "livereload": "^0.6.3",
+        "open": "^0.0.5",
         "prop-types": "^15.6.0",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
