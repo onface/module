@@ -3,10 +3,28 @@ var markrun = require('markrun')
 var path = require('path')
 var fs = require('fs')
 var json5 = require('json5')
+var config = require('./getConfig')()
 var compileConfig = require('../compile')
 fis.match('**.css', {
     parser: fis.plugin('less-2.x', compileConfig.less),
     rExt: '.css'
+})
+
+/**
+ * livereload
+ */
+fis.media('dev').match('*.{md,html}', {
+    postprocessor: function (content, file) {
+       if (fis.project.currentMedia() === 'dev') {
+           if (content.indexOf('onface-project-livereload') === -1) {
+               var livereloadScriptTag = `<script>
+                           document.write('<scr'+ 'ipt data-onface-project-livereload="true" src="${'http://127.0.0.1:' + config.livereloadServerPort + '/livereload.js?snipver=1'}"></scr' + 'ipt>')
+                       </script>`
+               content = content.replace(/<\/\s*body>/, livereloadScriptTag + '</body>')
+           }
+       }
+       return content
+   }
 })
 
 
@@ -31,12 +49,18 @@ fis.match('**.md', {
     rExt: '.html',
     parser: [
         function (content, file) {
-            var type = 'default'
+            var tpl = 'default'
+            var markrunInfo = {
+                file: file,
+                deps:[]
+            }
             var html = markrun(content, {
                 compile: {
                     code: function (source, data, info) {
                         var settings = json5.parse(source)
                         var filePath= path.join(info.file.dirname, settings.source)
+                        info.deps = info.deps || []
+                        info.deps.push(filePath)
                         var code = fs.readFileSync(filePath).toString()
                         settings.desc = settings.desc || ''
                         settings.title = settings.title || path.parse(filePath).name
@@ -78,14 +102,16 @@ fis.match('**.md', {
                     PACKAGE: iPackage
                 },
                 template: function (data) {
-                    var typePath = data.type || type
-                    var templatePath = path.join(__dirname, '../doc/theme/template/' + typePath + '.ejs')
+                    var tplPath = data.tpl || tpl
+                    var templatePath = path.join(__dirname, '../doc/theme/template/' + tplPath + '.ejs')
                     var templateContent = fs.readFileSync(templatePath).toString()
                     return templateContent
                 }
-            }, {
-                file: file
-            })
+            }, markrunInfo)
+            // 与热更新冲突，取消缓存
+            // markrunInfo.deps.forEach(function (filename) {
+            //      file.cache.addDeps(filename)
+            // })
             html = html.replace(/href="([^"]+)"/g, function (all, url) {
                if (!require('is-absolute-url')(url) && !/^\/\//.test(url)) {
                    url = url.replace(/README\.md$/,'index.html')

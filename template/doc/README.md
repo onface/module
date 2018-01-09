@@ -1,7 +1,6 @@
 # 示例
 
 
-
 ````code
 {
     title: '基础使用',
@@ -20,6 +19,17 @@
 }
 </style>
 
+
+````code
+{
+    title: 'Vue',
+    desc: '',
+    html: '<div id="vue_node" ></div>',
+    js: './vue.demo.js',
+    source: './Basic.vue',
+    open: true
+}
+````
 ## style
 
 ···  

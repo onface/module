@@ -1,6 +1,6 @@
 # module name
 
-<!--MR-D{type: 'home'}-->
+<!--MR-D{tpl: 'home'}-->
 
 <style>h1 {display:none;}</style>
 

@@ -3,7 +3,7 @@
     "main": "lib/index.js",
     "keywords": "",
     "scripts": {
-        "dev": "fis3 release -w -d ./output -r ./ -f compile/fis-conf.js -c",
+        "dev": "rm -rf output && fis3 release -w -d ./output -r ./ -f compile/fis-conf.js -c",
         "s": "node ./compile/server",
         "build": "rm -rf ./output && fis3 release build -d ./output -r ./ -f compile/fis-conf.js -c"
     },
@@ -31,6 +31,7 @@
         "jasmine-core": "^2.8.0",
         "less-plugin-autoprefix": "^1.5.1",
         "less-plugin-functions": "^1.0.0",
+        "livereload": "^0.6.3",
         "prop-types": "^15.6.0",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
