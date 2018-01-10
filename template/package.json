@@ -8,6 +8,9 @@
         "s": "node ./compile/open && node ./compile/server",
         "build:1": "rm -rf ./output && fis3 release build -d ./output -r ./ -f compile/fis-conf.js && fis3 release buildversion -d ./output -r ./ -f compile/fis-conf.js",
         "build:2": "webpack --progress  --config ./compile/webpack.online.config.js && webpack --progress  --config ./compile/webpack.online.version.config.js",
+        "npm": "rm -rf ./output && fis3 release npm -d ./output -r ./ -f compile/fis-conf.js",
+        "gh": "npm run build:1 && npm run build:2",
+        "dp:gh": "node ./compile/deploy-sh",
         "test": "./node_modules/karma/bin/karma start ./compile/karma.conf.js --browsers Chrome",
         "test:ci": "./node_modules/karma/bin/karma start ./compile/karma.ci.js"
     },
@@ -31,6 +34,8 @@
         "extend": "^3.0.1",
         "fis-parser-less-2.x": "^0.1.4",
         "fis3-hook-relative": "^2.0.1",
+        "fis3-parser-vue-component": "^5.5.1",
+        "gh-pages": "^1.1.0",
         "glob": "^7.1.2",
         "hash-to-port": "^1.0.0",
         "is-absolute-url": "^2.1.0",
