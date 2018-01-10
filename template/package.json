@@ -7,7 +7,9 @@
         "dev": "rm -rf output && fis3 release -w -d ./output -r ./ -f compile/fis-conf.js",
         "s": "node ./compile/open && node ./compile/server",
         "build:1": "rm -rf ./output && fis3 release build -d ./output -r ./ -f compile/fis-conf.js && fis3 release buildversion -d ./output -r ./ -f compile/fis-conf.js",
-        "build:2": "webpack --progress  --config ./compile/webpack.online.config.js && webpack --progress  --config ./compile/webpack.online.version.config.js"
+        "build:2": "webpack --progress  --config ./compile/webpack.online.config.js && webpack --progress  --config ./compile/webpack.online.version.config.js",
+        "test": "./node_modules/karma/bin/karma start ./compile/karma.conf.js --browsers Chrome",
+        "test:ci": "./node_modules/karma/bin/karma start ./compile/karma.ci.js"
     },
     "$repository": "button.react",
     "dependencies": {
