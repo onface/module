@@ -1,3 +1,7 @@
+fis.hook(require('fis3-hook-relative'))
+fis.match('**', {
+    relative: true
+})
 var iPackage = require('../package.json')
 var markrun = require('markrun')
 var path = require('path')
@@ -5,27 +9,26 @@ var fs = require('fs')
 var json5 = require('json5')
 var config = require('./getConfig')()
 var compileConfig = require('../compile')
+var isAbsoluteUrl = require('is-absolute-url')
 fis.match('**.css', {
     parser: fis.plugin('less-2.x', compileConfig.less),
     rExt: '.css'
 })
-
 /**
  * livereload
  */
 fis.media('dev').match('*.{md,html}', {
     postprocessor: function (content, file) {
-       if (fis.project.currentMedia() === 'dev') {
-           if (content.indexOf('onface-project-livereload') === -1) {
-               var livereloadScriptTag = `<script>
-                           document.write('<scr'+ 'ipt data-onface-project-livereload="true" src="${'http://127.0.0.1:' + config.livereloadServerPort + '/livereload.js?snipver=1'}"></scr' + 'ipt>')
-                       </script>`
-               content = content.replace(/<\/\s*body>/, livereloadScriptTag + '</body>')
-           }
+       if (content.indexOf('onface-project-livereload') === -1) {
+           var livereloadScriptTag = `<script>
+                       document.write('<scr'+ 'ipt data-onface-project-livereload="true" src="${'http://127.0.0.1:' + config.livereloadServerPort + '/livereload.js?snipver=1'}"></scr' + 'ipt>')
+                   </script>`
+           content = content.replace(/<\/\s*body>/, livereloadScriptTag + '</body>')
        }
        return content
    }
 })
+
 
 
 var htmlEntryScriptParser = function (content, file) {
@@ -88,7 +91,7 @@ fis.match('**.md', {
                         ${code}
                     </div>
                     <script data-markrun-lastrun="true">
-                    document.write('<scri' + 'pt src="${settings.js}"' + '" ></sc' + 'ript>')
+                    document.write('<scri' + 'pt src="${settings.js}?v=${iPackage.version}"' + '" ></sc' + 'ript>')
                     </script>
                 </div>
                             `
@@ -132,4 +135,45 @@ fis.media('dev').match('**.js', {
 })
 fis.match('doc/theme/**', {
     release: true
+})
+
+if (fis.project.currentMedia() === 'buildversion') {
+    var outputPath = './output/' + iPackage.version
+    fis.config.data.options.d = outputPath
+    console.log('Build: ' + outputPath)
+
+}
+
+fis.match('{compile/**,compile.js,yarn.lock,test/**}', {
+    release: false
+}, true)
+
+var buildMedia = ['build', 'buildversion']
+buildMedia.forEach(function (media) {
+    fis.media(media).match('**.md', {
+        postprocessor: function(content, file, settings) {
+            var re = /<a\s+[\s\S]*?["'\s\w\/\-](?:>|$)/gi;
+            return content = content.replace(re, function(m, p1) {
+                return m.replace(/\s+href\s*=\s*(?:'([^']+)'|"([^"]+)"|([^\s\/>]+))/i, function(m, p1, p2, p3) {
+                    var matched = p1 || p2 || p3;
+                    return (matched && m.replace(matched, function(to) {
+                        if (fis.util.exists(to)) {
+                            return to;
+                        }
+                        var f = fis.uri(to, path.dirname(file.realpath)).file;
+                        if (!isAbsoluteUrl(to)) {
+                            var message = {
+                              target: to,
+                              file: file
+                            }
+                            fis.emit('plugin:relative:fetch', message)
+                            return message.ret.replace(/\.md/, '.html').replace(/README\./, 'index.')
+                        }
+                        var output = (f && f.url) || to;
+                        return output
+                    })) || m;
+                });
+            });
+        }
+    })
 })

@@ -19,7 +19,7 @@ module.exports = {
         publicPath: '/',
         path: path.join(__dirname, '../output'),
 		filename: '[name]',
-	    chunkFilename: '__chunk/[name]-[id]-[hash]-chunk.js'
+	    chunkFilename: '__chunk/[id]-[hash]-chunk.js'
     },
     resolve: {
 		alias: {
@@ -30,7 +30,7 @@ module.exports = {
         hot: true
     },
     plugins: [
-	   new webpack.HotModuleReplacementPlugin(),
+	    new webpack.HotModuleReplacementPlugin(),
 		new webpack.NamedModulesPlugin(),
 		new webpack.NoEmitOnErrorsPlugin(),
 	],

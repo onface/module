@@ -1,12 +1,15 @@
 {
     "name": "button.react",
     "main": "lib/index.js",
+    "version": "0.1.0",
     "keywords": "",
     "scripts": {
-        "dev": "rm -rf output && fis3 release -w -d ./output -r ./ -f compile/fis-conf.js -c",
+        "dev": "rm -rf output && fis3 release -w -d ./output -r ./ -f compile/fis-conf.js",
         "s": "node ./compile/open && node ./compile/server",
-        "build": "rm -rf ./output && fis3 release build -d ./output -r ./ -f compile/fis-conf.js -c"
+        "build:1": "rm -rf ./output && fis3 release build -d ./output -r ./ -f compile/fis-conf.js && fis3 release buildversion -d ./output -r ./ -f compile/fis-conf.js",
+        "build:2": "webpack --progress  --config ./compile/webpack.online.config.js && webpack --progress  --config ./compile/webpack.online.version.config.js"
     },
+    "$repository": "button.react",
     "dependencies": {
         "babel": "^6.23.0",
         "babel-core": "^6.26.0",
@@ -25,6 +28,7 @@
         "express": "^4.16.2",
         "extend": "^3.0.1",
         "fis-parser-less-2.x": "^0.1.4",
+        "fis3-hook-relative": "^2.0.1",
         "glob": "^7.1.2",
         "hash-to-port": "^1.0.0",
         "is-absolute-url": "^2.1.0",

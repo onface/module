@@ -2346,6 +2346,10 @@ fis-parser-less-2.x@^0.1.4:
   dependencies:
     less "2.5.0"
 
+fis3-hook-relative@^2.0.1:
+  version "2.0.1"
+  resolved "http://registry.npm.taobao.org/fis3-hook-relative/download/fis3-hook-relative-2.0.1.tgz#8f03d95369db95fb7769346d717b6b8a821f190a"
+
 flatten@^1.0.2:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/flatten/download/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
