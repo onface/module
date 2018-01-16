@@ -1,7 +1,7 @@
 {
-    "name": "button.react",
+    "name": "{{ name }}",
     "main": "lib/index.js",
-    "version": "0.1.0",
+    "version": "{{ description }}",
     "keywords": "",
     "scripts": {
         "dev": "rm -rf output && fis3 release -w -d ./output -r ./ -f compile/fis-conf.js",
@@ -14,7 +14,8 @@
         "test": "./node_modules/karma/bin/karma start ./compile/karma.conf.js --browsers Chrome",
         "test:ci": "./node_modules/karma/bin/karma start ./compile/karma.ci.js"
     },
-    "$repository": "button.react",
+    "$username": "{{ $username }}",
+    "$repository": "{{ $repository }}",
     "dependencies": {
         "babel": "^6.23.0",
         "babel-core": "^6.26.0",
@@ -43,6 +44,7 @@
         "less-plugin-autoprefix": "^1.5.1",
         "less-plugin-functions": "^1.0.0",
         "livereload": "^0.6.3",
+        "markrun": "^0.23.0",
         "open": "^0.0.5",
         "prop-types": "^15.6.0",
         "react": "^16.2.0",

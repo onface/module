@@ -8,6 +8,7 @@ var config = require('./getConfig')()
 var compileConfig = require('../compile')
 var isAbsoluteUrl = require('is-absolute-url')
 var userConfig = require('../compile')
+var ejs = require('ejs')
 fis.hook(require('fis3-hook-relative'))
 fis.match('**', {
     relative: true
@@ -16,24 +17,28 @@ fis.match('{**.css,**.vue:less}', {
     parser: fis.plugin('less-2.x', compileConfig.less),
     rExt: '.css'
 })
-/**
- * livereload
- */
-fis.media('dev').match('*.{md,html}', {
-    postprocessor: function (content, file) {
-       if (content.indexOf('onface-project-livereload') === -1) {
-           var livereloadScriptTag = `<script>
-                       document.write('<scr'+ 'ipt data-onface-project-livereload="true" src="${'http://127.0.0.1:' + config.livereloadServerPort + '/livereload.js?snipver=1'}"></scr' + 'ipt>')
-                   </script>`
-           content = content.replace(/<\/\s*body>/, livereloadScriptTag + '</body>')
-       }
-       return content
-   }
-})
 
 
-
-var htmlEntryScriptParser = function (content, file) {
+function htmlLinkProcessor (content, file) {
+    var html = content
+    html = html.replace(/href="([^"]+)"/g, function (all, url) {
+        if (!require('is-absolute-url')(url) && !/^\/\//.test(url)) {
+            url = url.replace(/README\.md/,'index.html')
+                   .replace(/\.md/,'.html')
+        }
+        return 'href="' + url + '"'
+    })
+    return html
+}
+function htmlEJSProcessor (content, file) {
+    var html = content
+    var template = ejs.compile(html)
+    html = template({
+        PACKAGE: require('../package.json')
+    })
+    return html
+}
+function htmlEntryScriptParser (content, file) {
     if (fis.project.currentMedia() !== 'dev') {
         return content
     }
@@ -47,11 +52,34 @@ var htmlEntryScriptParser = function (content, file) {
         return html
     })
 }
+/**
+ * livereload
+ */
+fis.media('dev').match('*.{md,html}', {
+    postprocessor: [
+        function (content, file) {
+           if (content.indexOf('onface-project-livereload') === -1) {
+               var livereloadScriptTag = `<script>
+                           document.write('<scr'+ 'ipt data-onface-project-livereload="true" src="${'http://127.0.0.1:' + config.livereloadServerPort + '/livereload.js?snipver=1'}"></scr' + 'ipt>')
+                       </script>`
+               content = content.replace(/<\/\s*body>/, livereloadScriptTag + '</body>')
+           }
+           return content
+       },
+       htmlEJSProcessor,
+       htmlLinkProcessor
+    ]
+})
+
 if (fis.project.currentMedia() !== 'npm') {
     fis.match('**.md', {
         useDomain: true,
         isHtmlLike: true,
         rExt: '.html',
+        postprocessor: [
+            htmlEJSProcessor,
+            htmlLinkProcessor
+        ],
         parser: [
             function (content, file) {
                 var tpl = 'default'
@@ -117,13 +145,6 @@ if (fis.project.currentMedia() !== 'npm') {
                 // markrunInfo.deps.forEach(function (filename) {
                 //      file.cache.addDeps(filename)
                 // })
-                html = html.replace(/href="([^"]+)"/g, function (all, url) {
-                   if (!require('is-absolute-url')(url) && !/^\/\//.test(url)) {
-                       url = url.replace(/README\.md$/,'index.html')
-                               .replace(/\.md$/,'.html')
-                   }
-                   return 'href="' + url + '"'
-                })
                 return html
             },
             htmlEntryScriptParser
@@ -157,30 +178,34 @@ fis.match('{compile/**,compile.js,yarn.lock,test/**}', {
 var buildMedia = ['build', 'buildversion']
 buildMedia.forEach(function (media) {
     fis.media(media).match('**.md', {
-        postprocessor: function(content, file, settings) {
-            var re = /<a\s+[\s\S]*?["'\s\w\/\-](?:>|$)/gi;
-            return content = content.replace(re, function(m, p1) {
-                return m.replace(/\s+href\s*=\s*(?:'([^']+)'|"([^"]+)"|([^\s\/>]+))/i, function(m, p1, p2, p3) {
-                    var matched = p1 || p2 || p3;
-                    return (matched && m.replace(matched, function(to) {
-                        if (fis.util.exists(to)) {
-                            return to;
-                        }
-                        var f = fis.uri(to, path.dirname(file.realpath)).file;
-                        if (!isAbsoluteUrl(to)) {
-                            var message = {
-                              target: to,
-                              file: file
+        postprocessor: [
+            function(content, file, settings) {
+                var re = /<a\s+[\s\S]*?["'\s\w\/\-](?:>|$)/gi;
+                return content = content.replace(re, function(m, p1) {
+                    return m.replace(/\s+href\s*=\s*(?:'([^']+)'|"([^"]+)"|([^\s\/>]+))/i, function(m, p1, p2, p3) {
+                        var matched = p1 || p2 || p3;
+                        return (matched && m.replace(matched, function(to) {
+                            if (fis.util.exists(to)) {
+                                return to;
                             }
-                            fis.emit('plugin:relative:fetch', message)
-                            return message.ret.replace(/\.md/, '.html').replace(/README\./, 'index.')
-                        }
-                        var output = (f && f.url) || to;
-                        return output
-                    })) || m;
+                            var f = fis.uri(to, path.dirname(file.realpath)).file;
+                            if (!isAbsoluteUrl(to)) {
+                                var message = {
+                                  target: to,
+                                  file: file
+                                }
+                                fis.emit('plugin:relative:fetch', message)
+                                return message.ret.replace(/\.md/, '.html').replace(/README\./, 'index.')
+                            }
+                            var output = (f && f.url) || to;
+                            return output
+                        })) || m;
+                    });
                 });
-            });
-        }
+            },
+            htmlEJSProcessor,
+            htmlLinkProcessor
+        ]
     })
 })
 

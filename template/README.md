@@ -1,4 +1,4 @@
-# module name
+# {{ name }}
 
 <!--MR-D{tpl: 'home'}-->
 
@@ -11,7 +11,7 @@
     </h2>
     <div class="face-one-intro-tool">
         <a href="./doc/intro.md" class="face-one-intro-btn face-one-intro-btn--primary">指引</a>
-        <a href="http://github.com/onface/module" class="face-one-intro-btn">GITHUB</a>
+        <a href="http://github.com/{{$username}}/{{$repository}}" class="face-one-intro-btn">GITHUB</a>
     </div>
 </div>
 <div class="face-one-feature">
