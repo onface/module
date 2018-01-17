@@ -74,8 +74,7 @@ module.exports = {
             var alias = {
                 'vue': 'vue/dist/vue.js'
             }
-            alias[iPackage.name] = path.join(__dirname, '../', iPackage.main || 'index.js')
-
+            alias[iPackage.name] = path.resolve(__dirname, '../')
             return alias
         })()
     }
