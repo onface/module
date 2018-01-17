@@ -1,7 +1,8 @@
 {
     "name": "{{ name }}",
     "main": "lib/index.js",
-    "version": "{{ description }}",
+    "version": "0.1.0",
+    "description": "{{ description }}",
     "keywords": "",
     "scripts": {
         "dev": "rm -rf output && fis3 release -w -d ./output -r ./ -f compile/fis-conf.js",
