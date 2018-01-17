@@ -6,6 +6,18 @@
 <style>h1 {display:none;}</style>
 -->
 
+<div class="face-one-intro">
+    <div class="face-one-intro-title">button.react</div>
+    <h2 class="face-one-intro-desc">
+        可定制化组件
+    </h2>
+    <div class="face-one-intro-tool">
+        <a href="./doc/intro.md" class="face-one-intro-btn face-one-intro-btn--primary">指引</a>
+        <!-- MARKRUN-HTML
+        <a href="http://github.com/{{$username}}/{{$repository}}" class="face-one-intro-btn">GITHUB</a>
+        -->
+    </div>
+</div>
 <div class="face-one-feature">
     <table style="width:100%;" data-comments="In order to github typesetting so use the table tag" >
         <tr>
