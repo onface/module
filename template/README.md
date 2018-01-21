@@ -12,9 +12,10 @@
         可定制化组件
     </h2>
     <div class="face-one-intro-tool">
-        <a href="./doc/intro.md" class="face-one-intro-btn face-one-intro-btn--primary">指引</a>
+        <a href="https://{{$username}}.github.io/{{$repository}}" class="face-one-intro-btn face-one-intro-btn--primary mr-online-hide" >在线文档</a>
         <!-- MARKRUN-HTML
-        <a href="http://github.com/{{$username}}/{{$repository}}" class="face-one-intro-btn">GITHUB</a>
+            <a href="./doc/intro.md" class="face-one-intro-btn face-one-intro-btn--primary">指引</a>
+            <a href="http://github.com/{{$username}}/{{$repository}}" class="face-one-intro-btn">GITHUB</a>
         -->
     </div>
 </div>
