@@ -3657,8 +3657,8 @@ html .face-one-sidebar > ul > li {
   clear: both;
 }
 .face-one-feature-item {
-  float: left;
-  width: 33%;
+  /* float: left;
+  width: 33%; */
 }
 .face-one-feature-item-photo {
   height: 8em;
