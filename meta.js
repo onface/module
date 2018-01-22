@@ -40,9 +40,7 @@ module.exports = {
             type: 'string',
             required: true,
             message: 'Github username or organization',
-            default: function (data) {
-                return getUser().replace(/\s.*/,'')
-            }
+            default: 'onface'
         },
         $repository: {
             type: 'string',
