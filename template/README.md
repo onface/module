@@ -56,7 +56,7 @@
         <tr>
             <td align="center" >
                 <a class="face-one-feature-item" href="https://github.com/{{ creatorAccount }}">
-                    <img src="https://github.com/{{ creatorAccount }}.png" width="150 height="150" alt="" class="face-one-feature-item-photo">
+                    <img src="https://github.com/{{ creatorAccount }}.png" width="150 height="150" alt="" class="face-one-feature-item-avatar">
                     <br />
                     <div class="face-one-feature-item-label">{{ creatorFullName }}</div>
                 </a>
