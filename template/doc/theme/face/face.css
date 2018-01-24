@@ -3661,7 +3661,11 @@ html .face-one-sidebar > ul > li {
   /* float: left;
   width: 33%; */
 }
-a.face-one-feature-item .face-one-feature-item-photo {
+a.face-one-feature-item {
+    color:#777;
+    text-decoration: none;
+}
+a.face-one-feature-item .face-one-feature-item-avatar {
     margin-bottom: 0;
     border-radius: 50%;
 }
