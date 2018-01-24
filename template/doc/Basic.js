@@ -1,5 +1,5 @@
 var React = require('react')
-var Button = require('button.react')
+var Button = require('{{ name }}')
 class Basic extends React.Component {
     render () {
         return (
