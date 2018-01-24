@@ -7,9 +7,9 @@
 -->
 
 <div class="face-one-intro">
-    <div class="face-one-intro-title">button.react</div>
+    <div class="face-one-intro-title">{{name}}</div>
     <h2 class="face-one-intro-desc">
-        可定制化组件
+        {{ description }}
     </h2>
     <div class="face-one-intro-tool">
         <a href="https://{{$username}}.github.io/{{$repository}}" class="face-one-intro-btn face-one-intro-btn--primary mr-online-hide" >在线文档</a>
@@ -27,7 +27,7 @@
                     <img src="./doc/theme/media/cogwheel.svg" alt="" class="face-one-feature-item-photo">
                     <br />
                     <div class="face-one-feature-item-label">定制开发</div>
-                    <div class="face-one-feature-item-desc">所有组件提供<a href="./doc.html" class="face-one-feature-item-desc-link">render props</a>便于二次开发</div>
+                    <div class="face-one-feature-item-desc">提供底层接口便于二次开发</div>
                 </div>
             </td>
             <td align="center" >
