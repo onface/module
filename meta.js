@@ -50,14 +50,14 @@ module.exports = {
                 return data.name
             }
         },
-        maintainerAccount: {
+        creatorAccount: {
             type: 'string',
             message: 'Maintainer account (Github username, is not organization)',
             default: function (data) {
                 return data.$username
             }
         },
-        maintainerFullName: {
+        creatorFullName: {
             type: 'string',
             message: 'Maintainer full name (example: Michael Jackson)',
             default: function (data) {

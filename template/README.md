@@ -49,3 +49,18 @@
         </tr>
     </table>
 </div>
+
+<h2 style="text-align:center;">Creator</h2>
+<div class="face-one-feature">
+    <table style="width:100%;" data-comments="In order to github typesetting so use the table tag" >
+        <tr>
+            <td align="center" >
+                <a class="face-one-feature-item" href="https://github.com/{{ creatorAccount }}">
+                    <img src="https://github.com/{{ creatorAccount }}.png" alt="" class="face-one-feature-item-photo">
+                    <br />
+                    <div class="face-one-feature-item-label">{{ creatorFullName }}</div>
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
