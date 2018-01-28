@@ -50,8 +50,10 @@
     </table>
 </div>
 
-<h2 style="text-align:center;">Creator</h2>
-<div class="face-one-feature">
+<div class="face-one-face-one-feature-title">
+    Creator
+</div>
+<div class="face-one-feature face-one-feature--creator">
     <table style="width:100%;" data-comments="In order to github typesetting so use the table tag" >
         <tr>
             <td align="center" >

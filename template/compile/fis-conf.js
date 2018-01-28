@@ -13,7 +13,7 @@ fis.hook(require('fis3-hook-relative'))
 fis.match('**', {
     relative: true
 })
-fis.match('{**.css,**.vue:less}', {
+fis.match('{**.css,**.vue:less,**.less}', {
     parser: fis.plugin('less-2.x', compileConfig.less),
     rExt: '.css'
 })

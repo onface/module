@@ -5,7 +5,7 @@
 
 <script>
 export default {
-  name: 'app',
+  name: '{{ componentname name }}',
   data () {
     return {
 

@@ -1,10 +1,10 @@
-# 示例
+# 文档
 
 
 ````code
 {
     title: '基础使用',
-    desc: '`type` `loading` `dashed` `ghost` `diasbled` `size`',
+    desc: '**markdown**',
     html: '<div id="basic-demo" ></div>',
     js: './basic.demo.js',
     source: './Basic.js',
@@ -12,81 +12,14 @@
 }
 ````
 
-<style>
-#basic-demo .face-btn {
-    margin-bottom: .2em;
-    margin-right: .2em;
-}
-</style>
-
 
 ````code
 {
     title: 'Vue',
-    desc: '',
-    html: '<div id="vue_node" ></div>',
+    desc: '**markdown**',
+    html: '<div id="vue-demo" ></div>',
     js: './vue.demo.js',
     source: './Basic.vue',
     open: true
 }
 ````
-## style
-
-···  
-···  
-···  
-···  
-···  
-start
-···  
-···  
-···  
-···  
-···  
-end
-···  
-···  
-···  
-···  
-···  
-
-
-## border
-
-···  
-···  
-···  
-···  
-···  
-start
-···  
-···  
-···  
-···  
-···  
-end
-···  
-···  
-···  
-···  
-···  
-
-## less
-
-···  
-···  
-···  
-···  
-···  
-start
-···  
-···  
-···  
-···  
-···  
-end
-···  
-···  
-···  
-···  
-···  
