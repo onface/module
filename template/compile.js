@@ -97,5 +97,12 @@ module.exports = {
                     version: '5.1'
                 }
         }
+    },
+    fis: function (fis) {
+
+    },
+    alias: {
+        'vue': 'vue/dist/vue.js',
+        './index.css': './index.less'
     }
 }

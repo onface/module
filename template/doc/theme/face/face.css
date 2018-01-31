@@ -2967,6 +2967,7 @@ html .face-one-sidebar > ul > li {
   padding-left: 1.6em;
   color: gray;
 }
+.face-one-foot-group-item a,
 .face-one-foot-group-item-link {
   text-decoration: none;
   color: #2d8cf0;
@@ -3014,8 +3015,8 @@ html .face-one-sidebar > ul > li {
   -webkit-text-size-adjust: 100%;
   color: #314659;
   font-family: -apple-system, BlinkMacSystemFont, segoe ui, Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
-  font-size: 16px;
-  line-height: 1.5;
+  /* font-size: 16px;
+  line-height: 1.5; */
   word-wrap: break-word;
 }
 .markdown-body .pl-c {
@@ -3165,12 +3166,12 @@ html .face-one-sidebar > ul > li {
   overflow: visible;
 }
 .markdown-body [type=checkbox] {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   padding: 0;
 }
-.markdown-body * {
+/* .markdown-body * {
   box-sizing: border-box;
-}
+} */
 .markdown-body input {
   font-family: inherit;
   font-size: inherit;
