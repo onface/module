@@ -1,7 +1,7 @@
 import p from 'prop-types'
 export default function (app) {
     app.defaultProps = {
-        prefixClassName: '{{ $repository }}-{{ $username }}',
+        prefixClassName: 'face-name',
         themes: ''
     }
     app.propTypes = {
