@@ -3656,6 +3656,9 @@ html .face-one-sidebar > ul > li {
   margin-top: 3em;
   margin-bottom: 3em;
 }
+.face-one-feature td {
+    width: 33%;
+}
 .face-one-feature--creator {
   margin-top: 1em;
 }
@@ -3707,6 +3710,7 @@ a.face-one-feature-item .face-one-feature-item-label {
 @media screen and (max-width: 750px) {
   .face-one-feature td {
     display: block;
+    width: 100%;
   }
   .face-one-feature table,
   .face-one-feature tr,
