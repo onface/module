@@ -104,6 +104,6 @@ module.exports = {
     },
     alias: {
         'vue': 'vue/dist/vue.js',
-        './index.css': './index.less'
+        [path.resolve('./lib/index.css')]: path.resolve('./lib/index.less')
     }
 }
