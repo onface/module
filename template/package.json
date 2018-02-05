@@ -18,7 +18,8 @@
     "$username": "{{ $username }}",
     "$repository": "{{ $repository }}",
     "dependencies": {
-        "util.react": "^1.4.1"
+        "util.react": "^1.4.1",
+        "prop-types": "^15.6.0"
     },
     "devDependencies": {
         "babel": "^6.23.0",
@@ -50,7 +51,6 @@
         "livereload": "^0.6.3",
         "markrun": "^0.23.0",
         "open": "^0.0.5",
-        "prop-types": "^15.6.0",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
         "vue": "^2.5.13",
