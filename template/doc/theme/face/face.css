@@ -2650,7 +2650,7 @@ a {
   display: inline-block;
   transition: right .3s ease;
 }
-.face-one-head-nav-switch {
+html .face-one-head-nav-switch {
   display: none;
 }
 .face-one-head-nav-link {
@@ -2721,7 +2721,7 @@ a {
   .face-one-head-logo {
     min-width: auto;
   }
-  .face-one-head-nav-switch {
+  html .face-one-head-nav-switch {
     cursor: pointer;
     color: #666;
     display: block;
