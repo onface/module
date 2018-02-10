@@ -105,15 +105,17 @@ if (fis.project.currentMedia() !== 'npm') {
                                 lang: 'replace',
                                 code: `
     <div class="face-one-code ${settings.open?' face-one-code--open':''} ${settings.horiz?' face-one-code--horiz':''}">
-                        <div class="face-one-code-example">
-                            ${settings.html}
-                        </div>
-                        <div class="face-one-code-info">
-                            <div class="face-one-code-info-title">${settings.title}</div>
-                            <div class="face-one-code-info-desc">
-                                ${markrun(settings.desc, {template: '<%- content %>'})}
+                        <div className="face-one-code-F-view">
+                            <div class="face-one-code-example">
+                                ${settings.html}
                             </div>
-                            <span class="face-one-code-info-switchCode fi fi-code"></span>
+                            <div class="face-one-code-info">
+                                <div class="face-one-code-info-title">${settings.title}</div>
+                                <div class="face-one-code-info-desc">
+                                    ${markrun(settings.desc, {template: '<%- content %>'})}
+                                </div>
+                                <span class="face-one-code-info-switchCode fi fi-code"></span>
+                            </div>
                         </div>
                         <div class="face-one-code-source">
                             <div class="face-one-code-source-tool">
