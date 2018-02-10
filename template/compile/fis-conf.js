@@ -105,7 +105,7 @@ if (fis.project.currentMedia() !== 'npm') {
                                 lang: 'replace',
                                 code: `
     <div class="face-one-code ${settings.open?' face-one-code--open':''} ${settings.horiz?' face-one-code--horiz':''}">
-                        <div className="face-one-code-F-view">
+                        <div class="face-one-code-F-view">
                             <div class="face-one-code-example">
                                 ${settings.html}
                             </div>
