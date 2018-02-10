@@ -98,12 +98,13 @@ if (fis.project.currentMedia() !== 'npm') {
                             settings.desc = settings.desc || ''
                             settings.title = settings.title || path.parse(filePath).name
                             settings.html = settings.html || ''
+                            settings.horiz = settings.horiz || false
                             code = code.replace(/\/\*ONFACE-DEL\*\/.*/g, '')
                             code = markrun.markdownParserHighlight(code, 'js')
                             return {
                                 lang: 'replace',
                                 code: `
-    <div class="face-one-code ${settings.open?' face-one-code--open':''}">
+    <div class="face-one-code ${settings.open?' face-one-code--open':''} ${settings.horiz?' face-one-code--horiz':''}">
                         <div class="face-one-code-example">
                             ${settings.html}
                         </div>

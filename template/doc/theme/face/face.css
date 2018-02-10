@@ -3829,6 +3829,46 @@ html .face-one-code-source-tool-copy {
 .face-one-code--open .face-one-code-source {
   display: block;
 }
+.face-one-code--horiz {
+  position: relative;
+}
+.face-one-code--horiz:after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+.face-one-code--horiz.face-one-code--open .face-one-code-source {
+  position: relative;
+  float: left;
+}
+.face-one-code--horiz .face-one-code-info {
+  position: static;
+}
+.face-one-code--horiz .face-one-code-info-switchCode {
+  z-index: 10;
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
+  width: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #888;
+  text-align: center;
+}
+.face-one-code--horiz .face-one-code-source {
+  display: block;
+}
+.face-one-code--horiz .face-one-code-F-view {
+  float: left;
+  width: 50%;
+}
+.face-one-code--horiz .face-one-code-source {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  overflow: auto;
+}
 .face-one-post {
   width: 80%;
   min-height: 20em;
