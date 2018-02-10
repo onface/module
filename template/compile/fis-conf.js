@@ -114,7 +114,7 @@ if (fis.project.currentMedia() !== 'npm') {
                                 <div class="face-one-code-info-desc">
                                     ${markrun(settings.desc, {template: '<%- content %>'})}
                                 </div>
-                                <span class="face-one-code-info-switchCode fi fi-code"></span>
+                                <span class="face-one-code-info-switchCode fi fi-${settings.horiz?'angle-double-down':'code'}"></span>
                             </div>
                         </div>
                         <div class="face-one-code-source">
