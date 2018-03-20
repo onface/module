@@ -25,6 +25,6 @@ class {{ componentname name }} extends Component {
         )
     }
 }
-require('./props').default(Button)
-export default Button
-module.exports= Button
+require('./props').default({{ componentname name }})
+export default {{ componentname name }}
+module.exports= {{ componentname name }}
