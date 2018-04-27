@@ -1437,13 +1437,7 @@ html .face-one-sidebar > ul > li {
   height: 0;
   overflow: visible;
 }
-.markdown-body input {
-  font: inherit;
-  margin: 0;
-}
-.markdown-body input {
-  overflow: visible;
-}
+
 .markdown-body [type=checkbox] {
   /* box-sizing: border-box; */
   padding: 0;
@@ -1451,11 +1445,6 @@ html .face-one-sidebar > ul > li {
 /* .markdown-body * {
   box-sizing: border-box;
 } */
-.markdown-body input {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
 .markdown-body a {
   color: #0366d6;
   text-decoration: none;
