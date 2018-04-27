@@ -5,6 +5,7 @@ require('./index.css')
 class {{ componentname name }} extends Component {
     constructor (props) {
         super(props)
+        util.betterDefaultValue(props)
         const self = this
         this.state = {}
     }
