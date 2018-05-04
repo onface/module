@@ -1,7 +1,9 @@
 var exec = require('child_process').execSync
+var fs = require('fs')
+var path = require('path')
 var componentname = function (name) {
     name = name || ''
-    name = name.replace(/(react|vue|ng)/g,'').replace(/(_|-)/g, '').replace(/\..*$/,'')
+    name = name.replace(/face\-/,'').replace(/(react|vue|ng)/g,'').replace(/(_|-)/g, '').replace(/\..*$/,'')
     if (name.length === 0) {
         name = 'some'
     }
@@ -36,6 +38,15 @@ module.exports = {
                 return componentname(data.name)
             }
         },
+        $frame: {
+            "type": "list",
+            "message": "Choose your frame",
+            "choices": [
+                "react",
+                "vue",
+                "none"
+            ]
+        },
         $username: {
             type: 'string',
             required: true,
@@ -61,7 +72,7 @@ module.exports = {
             type: 'string',
             message: 'Maintainer full name (example: Michael Jackson)',
             default: function (data) {
-                return data.maintainerAccount
+                return data.creatorAccount
             }
         },
         homepage: {
@@ -81,5 +92,38 @@ module.exports = {
             return name
         }
     },
-    completeMessage: "To get started:\n\n  cd {{destDirName}}\n  npm install --registry=https://registry.npm.taobao.org # or yarn\n  npm run dev\n  npm run js\n\nDocumentation can be found at {{ destDirName }}/developers-to-read.md"
+    complete: function (data) {
+        // switch(data.$frame) {
+        //     case 'vue':
+        //         fs.unlinkSync(
+        //             path.join(
+        //                 __dirname,
+        //                 './lib/index.js'
+        //             )
+        //         )
+        //         Basic.vue
+        //     break
+        //     case 'react':
+        //         fs.unlinkSync(
+        //             path.join(
+        //                 __dirname,
+        //                 './lib/index.vue'
+        //             )
+        //         )
+        //     break
+        //     case 'none':
+        //         fs.unlinkSync(
+        //             path.join(
+        //                 __dirname,
+        //                 './lib/index.vue'
+        //             )
+        //         )
+        //     break
+        //     default:
+        //
+        // }
+        console.log(
+            `To get started:\n\n  cd ./${data.destDirName}\n  yarn\n  npm run dev\n  npm run s\n\nDocumentation can be found at ${data.destDirName}/developers-to-read.md`
+        )
+    }
 }

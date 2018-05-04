@@ -1,3 +1,4 @@
+{{#if_eq $frame "react"}}
 import p from 'prop-types'
 export default function (app) {
     app.defaultProps = {
@@ -9,3 +10,7 @@ export default function (app) {
         themes: p.string
     }
 }
+{{/if_eq}}
+{{#if_eq $frame "none"}}
+
+{{/if_eq}}

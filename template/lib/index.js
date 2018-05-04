@@ -1,3 +1,4 @@
+{{#if_eq $frame "react"}}
 import { Component } from "react"
 import extend from "extend"
 import util from "util.react"
@@ -28,4 +29,19 @@ class {{ componentname name }} extends Component {
 }
 require('./props').default({{ componentname name }})
 export default {{ componentname name }}
-module.exports= {{ componentname name }}
+module.exports = {{ componentname name }}
+{{/if_eq}}
+{{#if_eq $frame "none"}}
+import extend from "safe-extend"
+class {{ componentname name }} {
+    constructor(props) {
+        this.settings = extend.clone(props)
+        this.settings.el.innerHTML = 'init'
+    }
+}
+export default {{ componentname name }}
+module.exports = {{ componentname name }}
+{{/if_eq}}
+{{#if_eq $frame "vue"}}
+module.exports = require('./index.vue')
+{{/if_eq}}

@@ -13,3 +13,19 @@ You can use travis & saucelabs test your code.
 [Saucelabs signup OSS](https://saucelabs.com/beta/signup/OSS/None)
 
 ![](https://cloud.githubusercontent.com/assets/3949015/23390554/daf8a9e8-fda9-11e6-9de8-a796e2a89226.png)
+
+
+## Publish document
+
+```shell
+npm run doc
+npm run gh
+```
+
+## Publish npm
+
+```shell
+npm run npm
+cd output
+npm publish
+```

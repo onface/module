@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Button from "../lib/vue.vue"
+import Button from "{{ name }}"
 export default {
 	components: { Button }
 }

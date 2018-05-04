@@ -4,7 +4,7 @@ class Basic extends React.Component {
     render () {
         return (
             <div className="basicDemo" >
-                <Button>default</Button>
+                <{{ componentname name }}>default</{{ componentname name }}>
             </div>
         )
     }

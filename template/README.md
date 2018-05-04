@@ -26,8 +26,18 @@
                 <div class="face-one-feature-item">
                     <img src="./doc/theme/media/cogwheel.svg" alt="" class="face-one-feature-item-photo">
                     <br />
-                    <div class="face-one-feature-item-label">定制开发</div>
-                    <div class="face-one-feature-item-desc">提供底层接口便于二次开发</div>
+                    {{#if_eq $frame "react"}}
+                        <div class="face-one-feature-item-label">定制开发</div>
+                        <div class="face-one-feature-item-desc">提供样式文件便于二次开发</div>
+                    {{/if_eq}}
+                    {{#if_eq $frame "vue"}}
+                        <div class="face-one-feature-item-label">定制开发</div>
+                        <div class="face-one-feature-item-desc">提供样式文件便于二次开发</div>
+                    {{/if_eq}}
+                    {{#if_eq $frame "none"}}
+                        <div class="face-one-feature-item-label">定制开发</div>
+                        <div class="face-one-feature-item-desc">配套 react vue 成品组件</div>
+                    {{/if_eq}}
                 </div>
             </td>
             <td align="center" >
@@ -39,11 +49,22 @@
                 </div>
             </td>
             <td align="center" >
+
                 <div class="face-one-feature-item">
                     <img src="./doc/theme/media/share.svg" alt="" class="face-one-feature-item-photo">
                     <br />
-                    <div class="face-one-feature-item-label">逻辑封装</div>
-                    <div class="face-one-feature-item-desc">提供业务逻辑封装，快速开发</div>
+                    {{#if_eq $frame "react"}}
+                        <div class="face-one-feature-item-label">组件生态</div>
+                        <div class="face-one-feature-item-desc">可与 <a href="http://onface.github.io/">onface</a> 中任意组件组合使用</div>
+                    {{/if_eq}}
+                    {{#if_eq $frame "vue"}}
+                        <div class="face-one-feature-item-label">组件生态</div>
+                        <div class="face-one-feature-item-desc">可与 <a href="http://onface.github.io/">onface</a> 中任意组件组合使用</div>
+                    {{/if_eq}}
+                    {{#if_eq $frame "none"}}
+                        <div class="face-one-feature-item-label">面向过程接口</div>
+                        <div class="face-one-feature-item-desc">接口易于理解，快速与业务逻辑结合</div>
+                    {{/if_eq}}
                 </div>
             </td>
         </tr>
