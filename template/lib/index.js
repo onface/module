@@ -2,11 +2,11 @@
 import { Component } from "react"
 import extend from "extend"
 import util from "util.react"
+import reactDefaultValue from "react-defaultvalue"
 require('./index.css')
 class {{ componentname name }} extends Component {
     constructor (props) {
         super(props)
-        util.betterDefaultValue(props)
         const self = this
         this.state = {}
     }
@@ -19,7 +19,8 @@ class {{ componentname name }} extends Component {
 
         return (
             <span
-                ref="root"
+                ref={(node) => { self.refsRoot = node}}
+                style={self.props.style}
                 className={rootClassName}
             >
             {self.props.children}
@@ -28,6 +29,7 @@ class {{ componentname name }} extends Component {
     }
 }
 require('./props').default({{ componentname name }})
+{{ componentname name }} = reactDefaultValue({{ componentname name }})
 export default {{ componentname name }}
 module.exports = {{ componentname name }}
 {{/if_eq}}

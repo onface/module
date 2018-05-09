@@ -19,6 +19,7 @@
     "$repository": "{{ $repository }}",
     "dependencies": {
         {{#if_eq $frame "react"}}
+        "react-defaultvalue": "^0.1.0",
         "util.react": "^1.4.1",
         "prop-types": "^15.6.0"
         {{/if_eq}}
