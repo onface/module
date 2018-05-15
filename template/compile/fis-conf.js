@@ -98,7 +98,7 @@ if (fis.project.currentMedia() !== 'npm') {
                             settings.desc = settings.desc || ''
                             settings.title = settings.title || path.parse(filePath).name
                             settings.html = settings.html || ''
-                            settings.horiz = settings.horiz || true
+                            settings.horiz = typeof settings.horiz === 'undefined'? true: settings.horiz
                             code = code.replace(/\/\*ONFACE-DEL\*\/.*/g, '')
                             code = markrun.markdownParserHighlight(code, 'js')
                             return {
