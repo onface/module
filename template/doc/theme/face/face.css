@@ -2057,18 +2057,17 @@ a.face-one-feature-item .face-one-feature-item-label {
   margin-bottom: 0;
 }
 .face-one-code-info-switchCode {
-  position: absolute;
-  right: .5em;
-  bottom: .5em;
-  transition: color .3s;
-  font-size: .8em;
-  color: #666;
+    position: absolute;
+    right:.5em;bottom:.5em;
+    transition: color .3s;
+    font-size: .8em;
+    color:#999;
 }
 .face-one-code-source-tool-preview:hover,
 .face-one-code-source-tool-copy:hover,
 .face-one-code-info-switchCode:hover {
-  cursor: pointer;
-  color: #111;
+    cursor: pointer;
+    color:#09f;
 }
 .face-one-code-source {
   position: relative;

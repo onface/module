@@ -98,7 +98,7 @@ if (fis.project.currentMedia() !== 'npm') {
                             settings.desc = settings.desc || ''
                             settings.title = settings.title || path.parse(filePath).name
                             settings.html = settings.html || ''
-                            settings.horiz = settings.horiz || false
+                            settings.horiz = settings.horiz || true
                             code = code.replace(/\/\*ONFACE-DEL\*\/.*/g, '')
                             code = markrun.markdownParserHighlight(code, 'js')
                             return {
@@ -123,9 +123,14 @@ if (fis.project.currentMedia() !== 'npm') {
                             </div>
                             ${code}
                         </div>
-                        <script data-markrun-lastrun="true">
-                        document.write('<scri' + 'pt src="${settings.js}?v=${iPackage.version}"' + '" ></sc' + 'ript>')
-                        </script>
+                        ${
+                            settings.js?
+                            `
+                            <script data-markrun-lastrun="true">
+                            document.write('<scri' + 'pt src="${settings.js}?v=${iPackage.version}"' + '" ></sc' + 'ript>')
+                            </script>
+                            `:''
+                        }
                     </div>
                                 `
                             }
