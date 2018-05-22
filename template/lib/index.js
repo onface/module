@@ -2,7 +2,6 @@
 import { Component } from "react"
 import extend from "extend"
 import util from "util.react"
-import reactDefaultValue from "react-defaultvalue"
 require('./index.css')
 class {{ componentname name }} extends Component {
     constructor (props) {
@@ -29,7 +28,6 @@ class {{ componentname name }} extends Component {
     }
 }
 require('./props').default({{ componentname name }})
-{{ componentname name }} = reactDefaultValue({{ componentname name }})
 export default {{ componentname name }}
 module.exports = {{ componentname name }}
 {{/if_eq}}
