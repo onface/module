@@ -233,6 +233,12 @@ if (fis.project.currentMedia() === 'npm') {
             }
         ]
     })
+    fis.match('doc/**.vue', {
+        parse:[]
+    })
+    fis.match('doc/{**.js,**.vue:js}', {
+        parse: []
+    })
     fis.match('**.demo.js', {
         parser: []
     })
