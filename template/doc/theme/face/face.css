@@ -912,6 +912,7 @@ a {
 .face-one-head-slogan {
   color: #999;
   font-size: 0.8em;
+  margin-left: .5em;
 }
 .face-one-head-slogan:before {
   content: '"';
@@ -1514,6 +1515,7 @@ html .face-one-sidebar > ul > li {
   font-weight: 600;
 }
 .markdown-body p {
+  line-height: 1.6;
   margin-top: 0;
   margin-bottom: 10px;
 }
@@ -2097,25 +2099,25 @@ html .face-one-code-source-tool-copy {
 .face-one-code--open .face-one-code-source {
   display: block;
 }
-.face-one-code--horiz {
+.face-one-code--side {
   position: relative;
 }
-.face-one-code--horiz:after {
+.face-one-code--side:after {
   content: ' ';
   display: block;
   clear: both;
 }
-.face-one-code--horiz.face-one-code--open .face-one-code-source {
+.face-one-code--side.face-one-code--open .face-one-code-source {
   position: relative;
   float: left;
 }
-.face-one-code--horiz .face-one-code-source > pre {
+.face-one-code--side .face-one-code-source > pre {
   border-top: none;
 }
-.face-one-code--horiz .face-one-code-info {
+.face-one-code--side .face-one-code-info {
   position: static;
 }
-.face-one-code--horiz .face-one-code-info-switchCode {
+.face-one-code--side .face-one-code-info-switchCode {
   z-index: 10;
   background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
   width: 50%;
@@ -2125,14 +2127,14 @@ html .face-one-code-source-tool-copy {
   color: #888;
   text-align: center;
 }
-.face-one-code--horiz .face-one-code-source {
+.face-one-code--side .face-one-code-source {
   display: block;
 }
-.face-one-code--horiz .face-one-code-F-view {
+.face-one-code--side .face-one-code-F-view {
   float: left;
   width: 50%;
 }
-.face-one-code--horiz .face-one-code-source {
+.face-one-code--side .face-one-code-source {
   position: absolute;
   right: 0;
   top: 0;
@@ -2144,20 +2146,20 @@ html .face-one-code-source-tool-copy {
   .face-one-code-info-switchCode {
     font-size: 1.2em;
   }
-  .face-one-code--horiz .face-one-code-info-switchCode {
+  .face-one-code--side .face-one-code-info-switchCode {
     width: 100%;
     position: static;
   }
-  .face-one-code--horiz .face-one-code-F-view {
+  .face-one-code--side .face-one-code-F-view {
     float: none;
     width: 100%;
   }
-  .face-one-code--horiz .face-one-code-source {
+  .face-one-code--side .face-one-code-source {
     display: none;
     width: 100%;
     position: static;
   }
-  html .face-one-code--horiz.face-one-code--open .face-one-code-source {
+  html .face-one-code--side.face-one-code--open .face-one-code-source {
     display: block;
   }
 }

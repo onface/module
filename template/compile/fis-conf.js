@@ -98,13 +98,13 @@ if (fis.project.currentMedia() !== 'npm') {
                             settings.desc = settings.desc || ''
                             settings.title = settings.title || path.parse(filePath).name
                             settings.html = settings.html || ''
-                            settings.horiz = typeof settings.horiz === 'undefined'? true: settings.horiz
+                            settings.side = settings.side || false
                             code = code.replace(/\/\*ONFACE-DEL\*\/.*/g, '')
                             code = markrun.markdownParserHighlight(code, 'js')
                             return {
                                 lang: 'replace',
                                 code: `
-    <div class="face-one-code ${settings.open?' face-one-code--open':''} ${settings.horiz?' face-one-code--horiz':''}">
+    <div class="face-one-code ${settings.open?' face-one-code--open':''} ${settings.side?' face-one-code--side':''}">
                         <div class="face-one-code-F-view">
                             <div class="face-one-code-example">
                                 ${settings.html}
@@ -114,7 +114,7 @@ if (fis.project.currentMedia() !== 'npm') {
                                 <div class="face-one-code-info-desc">
                                     ${markrun(settings.desc, {template: '<%- content %>'})}
                                 </div>
-                                <span class="face-one-code-info-switchCode fi fi-${settings.horiz?'ellipsis':'code'}"></span>
+                                <span class="face-one-code-info-switchCode fi fi-${settings.side?'ellipsis':'code'}"></span>
                             </div>
                         </div>
                         <div class="face-one-code-source">
