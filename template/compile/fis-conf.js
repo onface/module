@@ -263,8 +263,7 @@ if (fis.project.currentMedia() === 'npm') {
             function (content, file) {
                 return babel.transform(content, userConfig.babel).code
             }
-        ],
-        rExt: '.js'
+        ]
     })
     fis.match('{**.js,**.vue:js}', {
         parser: [
@@ -283,7 +282,7 @@ if (fis.project.currentMedia() === 'npm') {
         parser: []
     })
     fis.match('**.vue', {
-        rExt: 'js',
+        rExt: 'vue',
         useSameNameRequire: true,
         parser: [
             fis.plugin('vue-component', {
