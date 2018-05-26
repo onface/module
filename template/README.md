@@ -11,6 +11,19 @@
     <h2 class="face-one-intro-desc">
         {{ description }}
     </h2>
+    <!-- MARKRUN-HTML
+        <div class="face-one-readmedemo">
+            <div class="face-one-readmedemo-node">
+                <div id="simple-demo" class="face-one-readmedemo-node-render"></div>
+            </div>
+        </div>
+        <script data-markrun-lastrun="true">
+        ;(function(){
+            var  date = new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDate()
+            document.write('<scri' + 'pt src="./doc/simple.demo.js?v="' + date + '" ></sc' + 'ript>')
+        }())
+        </script>
+    -->
     <div class="face-one-intro-tool">
         <a href="https://{{$username}}.github.io/{{$repository}}" class="face-one-intro-btn face-one-intro-btn--primary mr-online-hide" >在线文档</a>
         <!-- MARKRUN-HTML
@@ -55,7 +68,7 @@
                     <br />
                     {{#if_eq $frame "react"}}
                         <div class="face-one-feature-item-label">组件生态</div>
-                        <div class="face-one-feature-item-desc">可与 <a href="http://onface.github.io/">onface</a> 中任意组件组合使用</div>
+                        <div class="face-one-feature-item-desc">可与 <a href="https://onface.live/">onface</a> 中任意组件组合使用</div>
                     {{/if_eq}}
                     {{#if_eq $frame "vue"}}
                         <div class="face-one-feature-item-label">组件生态</div>
@@ -71,7 +84,7 @@
     </table>
 </div>
 
-<div class="face-one-face-one-feature-title">
+<div class="face-one-feature-title">
     Creator
 </div>
 <div class="face-one-feature face-one-feature--creator">

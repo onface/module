@@ -7,9 +7,8 @@
 {
     title: '基础使用',
     desc: '',
-    html: '<div id="basic-demo" ></div>',
-    js: './basic.demo.js',
-    source: './Basic.js',
+    html: '<div id="simple-demo" ></div>',
+    source: './simple.demo.js',
     open: true
 }
 ````
@@ -22,9 +21,8 @@
 {
     title: '基础使用',
     desc: '',
-    html: '<div id="basic-demo" ></div>',
-    js: './basic.demo.js',
-    source: './basic.demo.js',
+    html: '<div id="simple-demo" ></div>',
+    source: './simple.demo.js',
     open: true
 }
 ````
@@ -37,9 +35,9 @@
 {
     title: '基础使用',
     desc: '',
-    html: '<div id="vue-demo" ></div>',
-    js: './basic.demo.js',
-    source: './Basic.vue',
+    html: '<div id="simple-demo" ></div>',
+    source: './simple.demo.js',
+    files: ['./Simple.vue'],
     open: true
 }
 ````

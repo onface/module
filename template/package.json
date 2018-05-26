@@ -20,13 +20,24 @@
     "dependencies": {
         {{#if_eq $frame "react"}}
         "util.react": "^1.6.0",
-        "prop-types": "^15.6.0"
+        "prop-types": "^15.6.0",
+        "react-spread-props": "^0.1.1"
         {{/if_eq}}
         {{#if_eq $frame "none"}}
         "safe-extend": "^3.0.5"
         {{/if_eq}}
     },
+    "optionalDependencies": {
+        {{#if_eq $frame "react"}}
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0"
+        {{/if_eq}}
+        {{#if_eq $frame "vue"}}
+        "vue": "^2.5.13"
+        {{/if_eq}}
+   },
     "devDependencies": {
+        "codesandbox": "^1.2.10",
         "babel": "^6.23.0",
         "babel-core": "^6.26.0",
         "babel-loader": "^7.1.2",
@@ -56,9 +67,6 @@
         "livereload": "^0.6.3",
         "markrun": "^0.23.0",
         "open": "^0.0.5",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0",
-        "vue": "^2.5.13",
         "vue-template-compiler": "^2.5.13",
         "css-loader": "^0.26.1",
         "file-loader": "^1.1.6",
