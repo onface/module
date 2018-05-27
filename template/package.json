@@ -29,8 +29,8 @@
     },
     "optionalDependencies": {
         {{#if_eq $frame "react"}}
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0"
+        "react": "^16.4.0",
+        "react-dom": "^16.4.0"
         {{/if_eq}}
         {{#if_eq $frame "vue"}}
         "vue": "^2.5.13"
