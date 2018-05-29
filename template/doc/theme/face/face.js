@@ -147,3 +147,18 @@ jQuery(function ($) {
         })
     })
 })
+jQuery(function ($) {
+    $.getJSON('https://registry.npm.taobao.org/' + PACKAGE_JSON.$repository, function (data) {
+        var options = []
+        Object.keys(data.versions).forEach(function (key) {
+            var item = data.versions[key]
+            options.push('<option value="'+ item.version + '" >' + item.version + '</option>')
+        })
+        $versionSelect = $('<select value="' + PACKAGE_JSON.version + '" >' + options.join('') + '</select>')
+        $('#face-one-view-version').append($versionSelect)
+        $versionSelect.on('change', function (e) {
+            var url = location.origin + '/' + PACKAGE_JSON.$repository + '/' + e.target.value + '/'
+            location.href = url
+        })
+    })
+})
