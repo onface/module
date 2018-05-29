@@ -147,6 +147,7 @@ jQuery(function ($) {
         })
     })
 })
+
 jQuery(function ($) {
     $.getJSON('https://registry.npm.taobao.org/' + PACKAGE_JSON.$repository, function (data) {
         var options = []
