@@ -135,7 +135,7 @@ if (fis.project.currentMedia() !== 'npm') {
                             return {
                                 lang: 'replace',
                                 code: `
-    <div class="face-one-code ${settings.open?' face-one-code--open':''} ${settings.side?' face-one-code--side':''}">
+    <div class="face-one-code ${settings.open?' face-one-code--open':''} ${settings.run?' face-one-code--run':''} ${settings.side?' face-one-code--side':''}">
                         <div class="face-one-code-F-view">
                             <div class="face-one-code-example">
                                 ${settings.html}
