@@ -131,6 +131,17 @@ if (fis.project.currentMedia() !== 'npm') {
                                     content: fs.readFileSync(filePath).toString()
                                 }
                             })
+                            var scriptCode
+                            if (fis.project.currentMedia() === 'dev') {
+                                scriptCode = `
+                                <script data-markrun-lastrun="true">
+                                document.write('<scri' + 'pt src="${settings.source}?v=${iPackage.version}"' + '" ></sc' + 'ript>')
+                                </script>
+                                `
+                            }
+                            else {
+                                scriptCode = `<script data-markrun-lastrun="true" src="${settings.source}?v=${iPackage.version}"></script>`
+                            }
                             var parametersData = getParameters(parametersSettings)
                             return {
                                 lang: 'replace',
@@ -159,17 +170,8 @@ if (fis.project.currentMedia() !== 'npm') {
                             ${code}
                         </div>
                         ${
-                            settings.run?
-                            `
-                            <script data-markrun-lastrun="true">
-                            document.write('<scri' + 'pt src="${settings.source}?v=${iPackage.version}"' + '" ></sc' + 'ript>')
-                            </script>
-                            `:''
+                            settings.run?scriptCode:''
                         }
-
-
-
-
                     </div>
                                 `
                             }
