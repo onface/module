@@ -89,11 +89,11 @@
     <a href="https://travis-ci.org/onface/{{ $repository }}" style="text-decoration: none;" >
         <img alt="Build Status" src="https://api.travis-ci.org/onface/{{ $repository }}.svg?branch=master" />
     </a>
-    <a href="https://npmjs.org/package/{{ $repository }}"  style="text-decoration: none;" >
-        <img alt="NPM version" src="https://img.shields.io/npm/v/{{ $repository }}.svg?style=flat" />
+    <a href="https://npmjs.org/package/{{ name }}"  style="text-decoration: none;" >
+        <img alt="NPM version" src="https://img.shields.io/npm/v/{{ name }}.svg?style=flat" />
     </a>
-    <a href="https://npmjs.org/package/{{ $repository }}"  style="text-decoration: none;" >
-        <img alt="NPM downloads" src="https://img.shields.io/npm/dm/{{ $repository }}.svg?style=flat" />
+    <a href="https://npmjs.org/package/{{ name }}"  style="text-decoration: none;" >
+        <img alt="NPM downloads" src="https://img.shields.io/npm/dm/{{ name }}.svg?style=flat" />
     </a>
 </div>
 
