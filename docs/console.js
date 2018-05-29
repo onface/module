@@ -1,3 +1,3 @@
 if (/onface/.test(location.href)) {
-    console.log('onface')
+    // console.log('onface')
 }
