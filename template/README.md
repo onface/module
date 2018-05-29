@@ -84,6 +84,25 @@
     </table>
 </div>
 
+
+<div style="text-align:center;" >
+    <a href="https://travis-ci.org/onface/{{ $repository }}" style="text-decoration: none;" >
+        <img alt="Build Status" src="https://api.travis-ci.org/onface/{{ $repository }}.svg?branch=master" />
+    </a>
+    <a href="https://npmjs.org/package/{{ $repository }}"  style="text-decoration: none;" >
+        <img alt="NPM version" src="https://img.shields.io/npm/v/{{ $repository }}.svg?style=flat" />
+    </a>
+    <a href="https://npmjs.org/package/{{ $repository }}"  style="text-decoration: none;" >
+        <img alt="NPM downloads" src="https://img.shields.io/npm/dm/{{ $repository }}.svg?style=flat" />
+    </a>
+</div>
+
+
+<a href="https://saucelabs.com/u/{{ $username }}-{{ $repository }}" >
+    <img alt="Saucelabs Tests" style="display:block;margin-left:auto;margin-right:auto;" src="https://saucelabs.com/browser-matrix/{{ $username }}-{{ $repository }}.svg" >
+</a>
+
+
 <div class="face-one-feature-title">
     Creator
 </div>
