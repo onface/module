@@ -1076,6 +1076,7 @@ html .face-one-nav-switch {
   display: block;
   position: relative;
   cursor: pointer;
+  text-indent: 1em;
 }
 .face-one-nav-item--group .face-one-nav-item-group {
   display: none;
@@ -2057,8 +2058,12 @@ a.face-one-feature-item .face-one-feature-item-label {
   right: .5em;
   bottom: .5em;
   transition: color .3s;
-  font-size: .8em;
-  color: #999;
+  color: #777;
+}
+.face-one-code-source-tool-preview,
+.face-one-code-source-tool-copy,
+.face-one-code-info-switchCode {
+  background-color: rgba(246, 248, 254, .8);
 }
 .face-one-code-source-tool-preview:hover,
 .face-one-code-source-tool-copy:hover,
@@ -2156,7 +2161,8 @@ html .face-one-code-source-tool-copy {
 }
 @media screen and (max-width: 750px) {
   .face-one-code-info-switchCode {
-    font-size: 1.2em;
+    font-size: 1em;
+    bottom: .25em;
   }
   .face-one-code--side .face-one-code-info-switchCode {
     width: 100%;

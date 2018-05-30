@@ -161,10 +161,13 @@ if (fis.project.currentMedia() !== 'npm') {
                         </div>
                         <div class="face-one-code-source"  >
                             <div class="face-one-code-source-tool">
-                                <form class="face-one-code-source-tool-preview" action="https://codesandbox.io/api/v1/sandboxes/define" method="post" target="_blank" >
-                                    <input type="hidden" name="parameters" value="${parametersData}">
-                                    <button type="submit" class="fi fi-edit face-one-code-source-tool-preview-submit" ></button>
-                                </form>
+                                ${
+                                    settings.run?
+                                    `<form class="face-one-code-source-tool-preview" action="https://codesandbox.io/api/v1/sandboxes/define" method="post" target="_blank" >
+                                        <input type="hidden" name="parameters" value="${parametersData}">
+                                        <button type="submit" class="fi fi-edit face-one-code-source-tool-preview-submit" ></button>
+                                    </form>`:''
+                                }
                                 <span class="face-one-code-source-tool-copy fi fi-copy"></span>
                             </div>
                             ${code}

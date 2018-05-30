@@ -100,3 +100,14 @@ PACKAGE_JSON = {
     version: "<%= PACKAGE.version%>",
 }
 </script>
+<script>
+    if (location.pathname === '/' + PACKAGE_JSON.$repository) {
+        var url = [
+            location.origin,
+            '/' + PACKAGE_JSON.$repository + '/',
+            location.search,
+            location.hash
+        ].join('')
+        location.href = url
+    }
+</script>
