@@ -2120,7 +2120,7 @@ html .face-one-code-source-tool-copy {
   clear: both;
 }
 .face-one-code--side.face-one-code--open .face-one-code-source {
-  /*position: relative;*/
+  position: relative;
   float: left;
 }
 .face-one-code--side .face-one-code-source > pre {
