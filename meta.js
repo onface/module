@@ -80,7 +80,7 @@ module.exports = {
             message: 'Online homepage?',
             required: true,
             default: function (data) {
-                return 'http://'+ data.$username + '.github.io/' + data.$repository
+                return 'https://'+ data.$username + '.github.io/' + data.$repository + '/'
             }
         }
     },
