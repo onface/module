@@ -1,9 +1,9 @@
 <template>
-	<Button />
+	<{{ componentname name }} />
 </template>
 
 <script>
-import Button from "{{ name }}"
+import {{ componentname name }} from "{{ name }}"
 export default {
 	components: { Button }
 }
