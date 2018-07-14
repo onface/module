@@ -9,7 +9,7 @@
     desc: '',
     html: '<div id="simple-demo" ></div>',
     source: './simple.demo.js',
-    open: true
+    side: true
 }
 ````
 
@@ -23,7 +23,7 @@
     desc: '',
     html: '<div id="simple-demo" ></div>',
     source: './simple.demo.js',
-    open: true
+    side: true
 }
 ````
 
@@ -38,7 +38,7 @@
     html: '<div id="simple-demo" ></div>',
     source: './simple.demo.js',
     files: ['./Simple.vue'],
-    open: true
+    side: true
 }
 ````
 

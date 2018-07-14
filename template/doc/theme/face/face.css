@@ -2060,6 +2060,9 @@ a.face-one-feature-item .face-one-feature-item-label {
   transition: color .3s;
   color: #777;
 }
+.face-one-code--side .face-one-code-info-switchCode {
+  font-size:1.5em;
+}
 .face-one-code-source-tool-preview,
 .face-one-code-source-tool-copy,
 .face-one-code-info-switchCode {
@@ -2299,4 +2302,35 @@ html .face-one-code-source-tool-copy {
 }
 .hljs-link {
   text-decoration: underline;
+}
+
+.markdown-body h1 .markrun-anchor,
+.markdown-body h2 .markrun-anchor,
+.markdown-body h3 .markrun-anchor,
+.markdown-body h4 .markrun-anchor,
+.markdown-body h5 .markrun-anchor,
+.markdown-body h6 .markrun-anchor,{
+    display: none;
+}
+.markdown-body h1:hover .markrun-anchor,
+.markdown-body h2:hover .markrun-anchor,
+.markdown-body h3:hover .markrun-anchor,
+.markdown-body h4:hover .markrun-anchor,
+.markdown-body h5:hover .markrun-anchor,
+.markdown-body h6:hover .markrun-anchor,{
+    display: inline;
+}
+html .markrun-anchor {
+    padding-right: 1em;
+    float: left;
+    margin-left: -2em;
+    position: relative;
+    left:1.3em;
+}
+html .markrun-anchor:hover{
+    text-decoration: none;
+}
+.markrun-anchor-link:after {
+    content: '#';
+    color:#2E8CF0;
 }
