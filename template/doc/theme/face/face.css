@@ -2133,6 +2133,7 @@ html .face-one-code-source-tool-copy {
 }
 .face-one-code--side .face-one-code-source > pre {
   border-top: none;
+  height: 100%;
 }
 .face-one-code--side .face-one-code-info {
   position: static;

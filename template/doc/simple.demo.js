@@ -5,7 +5,7 @@ var {{ componentname name }} = require('{{ name }}')
 class Simple extends React.Component {
     render () {
         return (
-            <div className="simpleDemo" >
+            <div>
                 <{{ componentname name }}>default</{{ componentname name }}>
             </div>
         )
