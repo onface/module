@@ -1,6 +1,7 @@
 var exec = require('child_process').execSync
 var fs = require('fs')
 var path = require('path')
+
 var componentname = function (name) {
     name = name || ''
     name = name.replace(/face\-/,'').replace(/(react|vue|ng)/g,'').replace(/(_|-)/g, '').replace(/\..*$/,'')

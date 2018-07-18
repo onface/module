@@ -21,7 +21,6 @@ fis.match('{**.css,**.vue:less,**.less}', {
     rExt: '.css'
 })
 
-
 function htmlLinkProcessor (content, file) {
     var html = content
     html = html.replace(/href="([^"]+)"/g, function (all, url) {
