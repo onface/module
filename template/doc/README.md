@@ -36,8 +36,8 @@
     title: '基础使用',
     desc: '',
     html: '<div id="simple-demo" ></div>',
-    source: './simple.demo.js',
-    files: ['./Simple.vue'],
+    source: './simple.vue',
+    run: './simple.demo.js',
     side: true
 }
 ````

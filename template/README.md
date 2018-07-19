@@ -37,7 +37,7 @@
         <tr>
             <td align="center" >
                 <div class="face-one-feature-item">
-                    <img src="./doc/theme/media/cogwheel.svg" alt="" class="face-one-feature-item-photo">
+                    <img src="https://onface.live/design/media/seo/cogwheel.svg" alt="" class="face-one-feature-item-photo">
                     <br />
                     {{#if_eq $frame "react"}}
                         <div class="face-one-feature-item-label">定制开发</div>
@@ -55,7 +55,7 @@
             </td>
             <td align="center" >
                 <div class="face-one-feature-item">
-                    <img src="./doc/theme/media/browser.svg" alt="" class="face-one-feature-item-photo">
+                    <img src="https://onface.live/design/media/seo/browser.svg" alt="" class="face-one-feature-item-photo">
                     <br />
                     <div class="face-one-feature-item-label">用户体验</div>
                     <div class="face-one-feature-item-desc">界面细致、即时反馈，更好的用户体验</div>
@@ -63,7 +63,7 @@
             </td>
             <td align="center" >
                 <div class="face-one-feature-item">
-                    <img src="./doc/theme/media/share.svg" alt="" class="face-one-feature-item-photo">
+                    <img src="https://onface.live/design/media/seo/share.svg" alt="" class="face-one-feature-item-photo">
                     <br />
                     {{#if_eq $frame "react"}}
                         <div class="face-one-feature-item-label">组件生态</div>

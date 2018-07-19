@@ -26,7 +26,7 @@ new {{componentname name}}({
 {{/if_eq}}
 {{#if_eq $frame "vue"}}
 import Vue from 'vue';
-import app from './Simple.vue';
+import app from './simple.vue';
 
 new Vue({
 	el:'#simple-demo',
