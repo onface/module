@@ -1051,7 +1051,7 @@ html .face-one-head-nav-switch {
 .face-one-nav-F-inner {
   width: 16em;
   height: 100%;
-  background-color: white;
+  /*background-color: white;*/
   color: #495057;
   line-height: 2.8;
   box-sizing: border-box;
@@ -1158,6 +1158,7 @@ html .face-one-nav-switch {
     position: relative;
     overflow-y: auto;
     border-right: none;
+    background-color: white;
     z-index: 2;
     height: 100%;
     opacity: 0;
