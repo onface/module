@@ -87,6 +87,9 @@ module.exports = {
     },
     helpers: {
         componentname: componentname,
+        vuecomponentname: function (name) {
+            return 'face-' + name.replace(/\.vue$/, '')
+        },
         saucelabsname: function (name) {
             name = name || ''
             name = name.replace(/\./g,'_')

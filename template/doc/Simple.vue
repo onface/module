@@ -4,7 +4,6 @@
 
 <script>
 import {{ componentname name }} from "{{ name }}"
-export default {
-	components: { Button }
-}
+require('vue').use({{ componentname name }})
+export default {}
 </script>

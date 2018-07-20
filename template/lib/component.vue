@@ -5,7 +5,7 @@
 
 <script>
 export default {
-  name: '{{ componentname name }}',
+  name: '{{ vuecomponentname name }}',
   data () {
     return {
 

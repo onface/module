@@ -77,6 +77,7 @@ module.exports = {
         ]
     },
     resolve: {
+        extensions: [".js", ".vue"],
         alias: (function () {
             var alias = compileConfig.alias
             alias[iPackage.name] = path.resolve(__dirname, '../')
