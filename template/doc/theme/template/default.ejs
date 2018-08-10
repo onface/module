@@ -10,6 +10,7 @@
     <title><%- title %></title>
     <!--[if lt IE 10]><script src="/doc/theme/polyfill/lt-ie10.js"></script><![endif]-->
     <script src="/doc/theme/polyfill/es6-promise.js"></script>
+    <script>document.createElement('markrun')</script>
 </head>
 <body>
 <link rel="import" href="/doc/theme/head.html?__inline">
@@ -24,9 +25,11 @@
             </div>
         </div>
         <div class="face-one-layout-cnt">
-            <div id="face-one-cnt" class="face-one-cnt markdown-body">
-                <div id="face-one-sidebar" class="face-one-sidebar"></div>
-                <%- content %>
+            <div id="face-one-cnt" class="face-one-cnt">
+                <markrun>
+                    <div id="face-one-sidebar" class="face-one-sidebar"></div>
+                    <%- content %>
+                </markrun>
             </div>
         </div>
     </div>

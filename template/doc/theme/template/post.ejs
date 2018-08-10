@@ -10,11 +10,14 @@
     <title><%- title %></title>
     <!--[if lt IE 10]><script src="/doc/theme/polyfill/lt-ie10.js"></script><![endif]-->
     <script src="/doc/theme/polyfill/es6-promise.js"></script>
+    <script>document.createElement('markrun')</script>
 </head>
 <body>
 <link rel="import" href="/doc/theme/head.html?__inline">
-<div class="face-one-post markdown-body">
+<div class="face-one-post">
+    <markrun>
     <%- content %>
+    </markrun>
 </div>
 <link rel="import" href="/doc/theme/foot.html?__inline">
 <script src="https://onface.live/design/one/index.js" ></script>
