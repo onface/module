@@ -101,7 +101,7 @@ if (fis.project.currentMedia() !== 'npm') {
                             settings.title = settings.title || path.parse(filePath).name
                             settings.html = settings.html || ''
                             settings.side = typeof settings.side === 'undefined'? false: settings.side
-                            settings.run = typeof settings.run === 'undefined'? true: settings.run
+                            settings.run = typeof settings.run === 'undefined'? false: settings.run
                             settings.files = settings.files || []
                             code = code.replace(/\/\*ONFACE-DEL\*\/.*/g, '')
                             var neatCode = code
@@ -124,6 +124,9 @@ if (fis.project.currentMedia() !== 'npm') {
                                     }
                                 }
                             }
+                            if (typeof settings.source === 'undefined') {
+                                settings.source = settings.run
+                            }
                             settings.files.forEach(function (item) {
                                 var filePath= path.join(info.file.dirname, item)
                                 parametersSettings.files[item] = {
@@ -134,7 +137,7 @@ if (fis.project.currentMedia() !== 'npm') {
                             if (fis.project.currentMedia() === 'dev') {
                                 scriptCode = `
                                 <script data-markrun-lastrun="true">
-                                document.write('<scri' + 'pt src="${settings.source}?v=${iPackage.version}"' + '" ></sc' + 'ript>')
+                                    document.write('<scri' + 'pt src="${settings.run}?v=${iPackage.version}"' + '" ></sc' + 'ript>')
                                 </script>
                                 `
                             }
