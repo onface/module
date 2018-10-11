@@ -93,6 +93,12 @@ if (fis.project.currentMedia() !== 'npm') {
                     compile: {
                         code: function (source, data, info) {
                             var settings = json5.parse(source)
+                            if (typeof settings.source === 'undefined') {
+                                if (!settings.run) {
+                                    throw new Error(__dirname + '/compile/fis-conf.js: \r\n````code\r\n{...}\r\n````\r\n must have source or run')
+                                }
+                                settings.source = settings.run
+                            }
                             var filePath= path.join(info.file.dirname, settings.source)
                             info.deps = info.deps || []
                             info.deps.push(filePath)
@@ -124,9 +130,6 @@ if (fis.project.currentMedia() !== 'npm') {
                                     }
                                 }
                             }
-                            if (typeof settings.source === 'undefined') {
-                                settings.source = settings.run
-                            }
                             settings.files.forEach(function (item) {
                                 var filePath= path.join(info.file.dirname, item)
                                 parametersSettings.files[item] = {
@@ -148,7 +151,7 @@ if (fis.project.currentMedia() !== 'npm') {
                             return {
                                 lang: 'replace',
                                 code: `
-    <div class="face-one-code ${settings.open?' face-one-code--open':''} ${settings.run?' face-one-code--run':''} ${settings.side?' face-one-code--side':''}">
+    <div ${settings.side && settings.height?`style="height: ${settings.height}em;"`}  class="face-one-code ${settings.open?' face-one-code--open':''} ${settings.run?' face-one-code--run':''} ${settings.side?' face-one-code--side':''} ${settings.height?' face-one-code--part':''}">
                         <div class="face-one-code-F-view">
                             <div class="face-one-code-example">
                                 ${settings.html}
@@ -161,7 +164,7 @@ if (fis.project.currentMedia() !== 'npm') {
                                 <span class="face-one-code-info-switchCode fi fi-${settings.side?'ellipsis':'code'}"></span>
                             </div>
                         </div>
-                        <div class="face-one-code-source"  >
+                        <div class="face-one-code-source" ${!settings.side && settings.height? `style="height: ${settings.height}em;"`}   >
                             <div class="face-one-code-source-tool">
                                 ${
                                     settings.run?
