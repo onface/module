@@ -151,7 +151,7 @@ if (fis.project.currentMedia() !== 'npm') {
                             return {
                                 lang: 'replace',
                                 code: `
-    <div ${settings.side && settings.height?`style="height: ${settings.height}em;"`}  class="face-one-code ${settings.open?' face-one-code--open':''} ${settings.run?' face-one-code--run':''} ${settings.side?' face-one-code--side':''} ${settings.height?' face-one-code--part':''}">
+    <div ${settings.side && settings.height?`style="height: ${settings.height}em;"`:''}  class="face-one-code ${settings.open?' face-one-code--open':''} ${settings.run?' face-one-code--run':''} ${settings.side?' face-one-code--side':''} ${settings.height?' face-one-code--part':''}">
                         <div class="face-one-code-F-view">
                             <div class="face-one-code-example">
                                 ${settings.html}
@@ -164,7 +164,7 @@ if (fis.project.currentMedia() !== 'npm') {
                                 <span class="face-one-code-info-switchCode fi fi-${settings.side?'ellipsis':'code'}"></span>
                             </div>
                         </div>
-                        <div class="face-one-code-source" ${!settings.side && settings.height? `style="height: ${settings.height}em;"`}   >
+                        <div class="face-one-code-source" ${!settings.side && settings.height? `style="height: ${settings.height}em;"`:''}   >
                             <div class="face-one-code-source-tool">
                                 ${
                                     settings.run?
