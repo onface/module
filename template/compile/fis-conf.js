@@ -161,7 +161,9 @@ if (fis.project.currentMedia() !== 'npm') {
                                 <div class="face-one-code-info-desc">
                                     ${markrun(settings.desc, {template: '<%- content %>'})}
                                 </div>
-                                <span class="face-one-code-info-switchCode fi fi-${settings.side?'ellipsis':'code'}"></span>
+                                <span class="face-one-code-info-switchCode ${settings.side?'fi fi-ellipsis':''}">
+                                    ${!settings.side?'<img src="https://onface.live/design/media/nice/dev.svg" alt="">':''}
+                                </span>
                             </div>
                         </div>
                         <div class="face-one-code-source" ${!settings.side && settings.height? `style="height: ${settings.height}em;"`:''}   >
@@ -170,10 +172,14 @@ if (fis.project.currentMedia() !== 'npm') {
                                     settings.run?
                                     `<form class="face-one-code-source-tool-preview" action="https://codesandbox.io/api/v1/sandboxes/define" method="post" target="_blank" >
                                         <input type="hidden" name="parameters" value="${parametersData}">
-                                        <button type="submit" class="fi fi-edit face-one-code-source-tool-preview-submit" ></button>
+                                        <button type="submit" class="face-one-code-source-tool-preview-submit" >
+                                            <img src="https://onface.live/design/media/cute/edit.svg" alt="">
+                                        </button>
                                     </form>`:''
                                 }
-                                <span class="face-one-code-source-tool-copy fi fi-copy"></span>
+                                <span class="face-one-code-source-tool-copy">
+                                    <img src="https://onface.live/design/media/nice/folder.svg" alt="">
+                                </span>
                             </div>
                             ${code}
                         </div>
