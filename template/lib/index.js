@@ -1,6 +1,6 @@
 {{#if_eq $frame "react"}}
 import { Component } from "react"
-import extend from "extend"
+import extend from "safe-extend"
 import util from "util.react"
 import spreadProps from "react-spread-props"
 require('./index.css')
