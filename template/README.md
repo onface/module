@@ -74,8 +74,8 @@
                         <div class="face-one-feature-item-desc">可与 <a href="http://onface.github.io/">onface</a> 中任意组件组合使用</div>
                     {{/if_eq}}
                     {{#if_eq $frame "none"}}
-                        <div class="face-one-feature-item-label">面向过程接口</div>
-                        <div class="face-one-feature-item-desc">接口易于理解，快速与业务逻辑结合</div>
+                    <div class="face-one-feature-item-label">面向过程接口</div>
+                    <div class="face-one-feature-item-desc">接口易于理解，快速与业务逻辑结合</div>
                     {{/if_eq}}
                 </div>
             </td>
