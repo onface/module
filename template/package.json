@@ -39,7 +39,7 @@
         {{/if_eq}}
    },
     "devDependencies": {
-        "codesandbox": "^1.2.10",
+        "codesandbox": "1.2.10",
         "babel": "^6.23.0",
         "babel-core": "^6.26.0",
         "babel-loader": "^7.1.2",
